@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\miria\Documents\Projetos\farmacia\.metadata\.plugins\org.eclipse.jdt.core
