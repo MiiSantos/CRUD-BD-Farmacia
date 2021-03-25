@@ -1,5 +1,7 @@
 package org.generation.farmacia.model;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,14 +24,14 @@ public class Produto {
 	private String nome;
 	
 	@NotNull
-	private double valor;
+	private BigDecimal valor;
 	
 	@NotNull
 	private boolean ativo;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("categoria")
-	private Produto categoria;
+	@JsonIgnoreProperties("produto")
+	private Categoria categoria;
 
 	public long getId() {
 		return id;
@@ -47,12 +49,29 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public double getPreco() {
+	public BigDecimal getValor() {
 		return valor;
 	}
 
-	public void setPreco(double preco) {
+	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
 	
 }
